@@ -6,12 +6,12 @@ public class GaugeController : MonoBehaviour
 {
     [SerializeField] private GameObject _gauge;
     [SerializeField] private GameObject _graceGauge;
-    [SerializeField] private int _HP;
     [SerializeField] private float _decreaseTime;
+    public int _HP;
     private float _HP1;
     private float _waitingTime = 0.5f;
 
-    void Awake()
+    public void Init()
     {
         _HP1 = _gauge.GetComponent<RectTransform>().sizeDelta.x / _HP;
     }

@@ -1,29 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class attack : MonoBehaviour
 {
-    [SerializeField] Transform muzzle = default;
-    [SerializeField] GameObject laser = default;
+    [SerializeField] Transform muzzle;
+    [SerializeField] GameObject laser;
     [SerializeField] float interval = 1f;
-    float timer;
-    // Start is called before the first frame update
+    [SerializeField] private PlayerType _type;
+
+    private float _timer;
     void Start()
     {
-        timer = interval;
+        _timer = interval;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if(Input.GetButton("Fire1") && timer > interval)
-        {
-            timer = 0;
-            GameObject bullet = Instantiate(laser);
-            bullet.transform.position = muzzle.transform.position;
-            bullet.transform.up = muzzle.transform.up;
-        }
+        _timer += Time.deltaTime;
+        var isPressed = (_type == PlayerType.A) ? Input.GetKeyDown(KeyCode.Space) : Input.GetKeyDown(KeyCode.RightShift);
+        if (isPressed && _timer > interval) Shoot();
+    }
+
+    private void Shoot()
+    {
+        _timer = 0;
+        var laserType = FindAnyObjectByType<TwoPlayerColorController>().GetLaserPrefab(_type);
+        var bullet = Instantiate(laserType);
+        bullet.transform.position = muzzle.transform.position;
+        bullet.transform.up = muzzle.transform.up;
+        var laserComponent = bullet.GetComponent<LaserBeamBehaviour>();
+        laserComponent.PlayerType = _type;
     }
 }

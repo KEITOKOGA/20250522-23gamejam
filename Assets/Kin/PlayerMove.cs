@@ -14,8 +14,6 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (type == PlayerType.A)
@@ -25,10 +23,16 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            _v = Input.GetAxisRaw("Vertical2");
-            _h = Input.GetAxisRaw("Horizontal2");
+            var addV = 0;
+            if (Input.GetKey(KeyCode.Keypad5)) addV--;
+            else if (Input.GetKey(KeyCode.Keypad8)) addV++;
+            _v = addV;
+            
+            var addH = 0;
+            if (Input.GetKey(KeyCode.Keypad4)) addH--;
+            else if (Input.GetKey(KeyCode.Keypad6)) addH++;
+            _h = addH;
         }
-        Debug.Log($"h: {_h} v:{_v}");
     }
 
     private void FixedUpdate()

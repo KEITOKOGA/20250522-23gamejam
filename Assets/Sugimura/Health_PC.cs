@@ -1,44 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
 using UnityEngine;
 
 public class Health_PC : MonoBehaviour, IAttackable
 {
-    [SerializeField, Header("Œ³‚Ì‘Ì—Í’l")]
-    public int m_health_pc;
-    [SerializeField, Header("‘Šè‚ÌŸ—˜‰æ–Ê")]
-    public GameObject m_win_2;
-    [SerializeField,Header("ƒ^ƒCƒgƒ‹‚Ö–ß‚é")]
-    public GameObject m_title;
-    /*
-        private float m_timer;
-        private string lasertag = "Laser";
-    */
-    private int m_Maxhealth_pc;
+    [SerializeField, Header("å…ƒã®ä½“åŠ›å€¤")] public int m_health_pc;
+    [SerializeField, Header("ç›¸æ‰‹ã®å‹åˆ©ç”»é¢")] public GameObject m_win_2;
+    [SerializeField, Header("ã‚¿ã‚¤ãƒˆãƒ«ã¸æˆ»ã‚‹")] public GameObject m_title;
+    private int _maxHealth;
     private float title;
     private int i = 0;
-    //    private bool hit = false;
+    [SerializeField]
+    private GaugeController gauge;
 
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        m_Maxhealth_pc = m_health_pc;
+        gauge._HP = m_health_pc;
+        gauge.Init();
+        _maxHealth = m_health_pc;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     public void Damage(int damage)
-    { 
+    {
+        Debug.Log($"player take {damage}");
+        gauge.BeInjured(damage);
         m_health_pc -= damage;
         if (m_health_pc <= 0)
         {
@@ -46,24 +29,5 @@ public class Health_PC : MonoBehaviour, IAttackable
             m_win_2.SetActive(true);
             m_title.SetActive(true);
         }
-
     }
-
-/*    public void Title()
-    {
-        if (Input.GetButtonDown("ƒ^ƒCƒgƒ‹"))
-        {
-            if (i == 0)
-            {
-                m_title.SetActive(true);
-                i += 1;
-            }
-            else
-            {
-                m_title.SetActive(false);
-                i = 0;
-            }
-        }
-    }
-*/
 }
