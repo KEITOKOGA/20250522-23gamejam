@@ -63,9 +63,9 @@ public class TwoPlayerColorController : MonoBehaviour
         }
     }
 
-    public GameObject GetLaserPrefab(PlayerType playerType)
+    public ColorType GetLaserInfo(PlayerType playerType)
     {
-        return playerType == PlayerType.A ? colorList[player1Index].laserPrefab : colorList[player2Index].laserPrefab;
+        return playerType == PlayerType.A ? colorList[player1Index] : colorList[player2Index];
     }
 }
 
@@ -74,4 +74,5 @@ public struct ColorType
 {
     public Color color;
     public GameObject laserPrefab;
+    public float interval;
 }
