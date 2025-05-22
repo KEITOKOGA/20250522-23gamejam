@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -26,11 +24,6 @@ public class LaserBeamBehaviour : MonoBehaviour
         BeginLaser();
     }
 
-    private void Update()
-    {
-        Debug.Log(_laserHit.transform.localScale.x);
-    }
-
     private void BeginLaser()
     {
         _laserSphere.DOScale(0, _beforeDurationTime).SetEase(Ease.Linear).OnComplete(() =>
@@ -39,7 +32,7 @@ public class LaserBeamBehaviour : MonoBehaviour
             _laserHit.DOScaleX(_width, _duration / 8).SetEase(Ease.Linear).OnComplete(() =>
             {
                 _laserHit.DOScaleX(0, _duration / 2).SetDelay(_duration / 8 * 3).SetEase(Ease.Linear)
-                    .OnComplete(() => { Destroy(gameObject); });
+                    .OnComplete(() => Destroy(gameObject));
             });
         });
     }
