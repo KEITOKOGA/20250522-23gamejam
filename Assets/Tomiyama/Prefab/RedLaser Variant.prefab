@@ -24,6 +24,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _duration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _beforeDurationTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6078010198327132460, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: m_Color.b
       value: 0

@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class LaserBeamBehaviour : MonoBehaviour
@@ -7,49 +9,42 @@ public class LaserBeamBehaviour : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private float _beforeDurationTime;
     [SerializeField] private float _width;
+    [SerializeField] private Transform _laserHit;
     [SerializeField] private Transform _player;
-    [SerializeField] private Transform _laser;
     [SerializeField] private Transform _laserSphere;
     public PlayerType PlayerType { get; set; }
 
 
     private void Start()
     {
-        _laser.gameObject.SetActive(false);
-        StartCoroutine(BeginLaser());
+        _laserHit.gameObject.SetActive(false);
+        var laserWidth = _laserHit.transform.localScale;
+        laserWidth.x = 0;
+        _laserHit.transform.localScale = laserWidth;
+
+        _laserSphere.transform.localScale = Vector3.one * _width;
+        BeginLaser();
     }
 
-    private IEnumerator BeginLaser()
+    private void Update()
     {
-        var currentTime = 0f;
-        while (currentTime < _beforeDurationTime)
-        {
-            yield return null;
-            currentTime += Time.deltaTime;
-            var scale = _laserSphere.localScale;
-            scale.x -= _width / _beforeDurationTime * Time.deltaTime / 2;
-            scale.y -= _width / _beforeDurationTime * Time.deltaTime / 2;
-            _laserSphere.localScale = scale;
-        }
-
-        _laser.gameObject.SetActive(true);
-
-        // 発射から徐々に細くなる
-        currentTime = 0f;
-        yield return new WaitForSeconds(_duration / 2);
-        while (currentTime < _duration / 2)
-        {
-            yield return null;
-            currentTime += Time.deltaTime;
-            var scale = _laser.localScale;
-            scale.x -= _width / _duration * Time.deltaTime;
-            _laser.localScale = scale;
-        }
-
-        Destroy(gameObject);
+        Debug.Log(_laserHit.transform.localScale.x);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void BeginLaser()
+    {
+        _laserSphere.DOScale(0, _beforeDurationTime).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            _laserHit.gameObject.SetActive(true);
+            _laserHit.DOScaleX(_width, _duration / 8).SetEase(Ease.Linear).OnComplete(() =>
+            {
+                _laserHit.DOScaleX(0, _duration / 2).SetDelay(_duration / 8 * 3).SetEase(Ease.Linear)
+                    .OnComplete(() => { Destroy(gameObject); });
+            });
+        });
+    }
+
+    public void HitCallBack(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<IAttackable>(out var component))
         {
