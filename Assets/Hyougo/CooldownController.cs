@@ -3,98 +3,82 @@ using UnityEngine.UI;
 
 public class CooldownController : MonoBehaviour
 {
-    public float actionCooldown = 5f;      // アクション後のクールタイム（秒）
-    private float actionEndTimePlayer1;    // プレイヤー1のクールタイム終了時刻
-    private float actionEndTimePlayer2;    // プレイヤー2のクールタイム終了時刻
+    public float cooldownDuration = 2f;
 
-    // プレイヤー1用の進捗バー（円形）
-    public Image cooldownImagePlayer1;
-    private bool isActioningPlayer1 = false;
+    private float actionEndTimeP1 = 0f;
+    private float actionEndTimeP2 = 0f;
 
-    // プレイヤー2用の進捗バー（円形）
-    public Image cooldownImagePlayer2;
-    private bool isActioningPlayer2 = false;
+    private bool isCooldownP1 = false;
+    private bool isCooldownP2 = false;
 
-    private void Start()
+    public Image cooldownImageP1;
+    public Image cooldownImageP2;
+
+    void Start()
     {
-        // 初期状態では進捗がない状態に設定
-        if (cooldownImagePlayer1 != null)
-        {
-            cooldownImagePlayer1.fillAmount = 0f;
-        }
-        if (cooldownImagePlayer2 != null)
-        {
-            cooldownImagePlayer2.fillAmount = 0f;
-        }
+        if (cooldownImageP1 != null) cooldownImageP1.fillAmount = 1f;
+        if (cooldownImageP2 != null) cooldownImageP2.fillAmount = 1f;
     }
 
-    private void Update()
+    void Update()
     {
-        HandlePlayerActions();
-    }
-
-    private void HandlePlayerActions()
-    {
-        // プレイヤー1がスペースキーでアクション
-        if (Input.GetKeyDown(KeyCode.Space) && !isActioningPlayer1)
-        {
-            StartAction(ref isActioningPlayer1, ref actionEndTimePlayer1, cooldownImagePlayer1);
-        }
-
-        // プレイヤー2が右シフトキーでアクション
-        if (Input.GetKeyDown(KeyCode.RightShift) && !isActioningPlayer2)
-        {
-            StartAction(ref isActioningPlayer2, ref actionEndTimePlayer2, cooldownImagePlayer2);
-        }
-
-        // プレイヤー1のアクション後クールタイムを管理
-        if (isActioningPlayer1 && Time.time > actionEndTimePlayer1)
-        {
-            ResetCooldown(ref isActioningPlayer1, cooldownImagePlayer1);
-        }
-
-        // プレイヤー2のアクション後クールタイムを管理
-        if (isActioningPlayer2 && Time.time > actionEndTimePlayer2)
-        {
-            ResetCooldown(ref isActioningPlayer2, cooldownImagePlayer2);
-        }
-
-        // アクション進捗バー（円形）の更新
+        HandlePlayerInput();
         UpdateCooldownUI();
     }
 
-    // アクションを開始するメソッド
-    private void StartAction(ref bool isActioning, ref float actionEndTime, Image cooldownImage)
+    void HandlePlayerInput()
     {
-        // クールタイムの終了時刻を設定
-        actionEndTime = Time.time + actionCooldown;
-        isActioning = true;  // アクション開始
-        cooldownImage.fillAmount = 1f;  // 進捗バーを100%にセット
-        Debug.Log("アクション開始！");
-    }
-
-    // アクション後のクールタイムをリセットするメソッド
-    private void ResetCooldown(ref bool isActioning, Image cooldownImage)
-    {
-        isActioning = false;  // クールタイム終了
-        cooldownImage.fillAmount = 0f;  // 進捗バーをリセット
-    }
-
-    // 円形進捗バーのUIを更新するメソッド
-    private void UpdateCooldownUI()
-    {
-        // プレイヤー1のクールタイム進捗バー更新
-        if (isActioningPlayer1)
+        // Player 1: Space
+        if (Input.GetKeyDown(KeyCode.Space) && !isCooldownP1)
         {
-            float remainingTime = actionEndTimePlayer1 - Time.time;  // 残り時間
-            cooldownImagePlayer1.fillAmount = remainingTime / actionCooldown;  // 残り時間に応じてバーの進捗を調整
+            isCooldownP1 = true;
+            actionEndTimeP1 = Time.time + cooldownDuration;
         }
 
-        // プレイヤー2のクールタイム進捗バー更新
-        if (isActioningPlayer2)
+        // Player 2: RightShift
+        if (Input.GetKeyDown(KeyCode.RightShift) && !isCooldownP2)
         {
-            float remainingTime = actionEndTimePlayer2 - Time.time;  // 残り時間
-            cooldownImagePlayer2.fillAmount = remainingTime / actionCooldown;  // 残り時間に応じてバーの進捗を調整
+            isCooldownP2 = true;
+            actionEndTimeP2 = Time.time + cooldownDuration;
+        }
+
+        if (isCooldownP1 && Time.time >= actionEndTimeP1)
+        {
+            isCooldownP1 = false;
+        }
+
+        if (isCooldownP2 && Time.time >= actionEndTimeP2)
+        {
+            isCooldownP2 = false;
+        }
+    }
+
+    void UpdateCooldownUI()
+    {
+        if (cooldownImageP1 != null)
+        {
+            if (isCooldownP1)
+            {
+                float remaining = actionEndTimeP1 - Time.time;
+                cooldownImageP1.fillAmount = Mathf.Clamp01(remaining / cooldownDuration);
+            }
+            else
+            {
+                cooldownImageP1.fillAmount = 1f; // 攻撃可能
+            }
+        }
+
+        if (cooldownImageP2 != null)
+        {
+            if (isCooldownP2)
+            {
+                float remaining = actionEndTimeP2 - Time.time;
+                cooldownImageP2.fillAmount = Mathf.Clamp01(remaining / cooldownDuration);
+            }
+            else
+            {
+                cooldownImageP2.fillAmount = 1f; // 攻撃可能
+            }
         }
     }
 }

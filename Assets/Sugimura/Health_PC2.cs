@@ -1,24 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Threading;
 using UnityEngine;
 
-public class Health_PC : MonoBehaviour, IAttackable
+public class Health_PC2 : MonoBehaviour,IAttackable
 {
     [SerializeField, Header("元の体力値")]
     public int m_health_pc;
     [SerializeField, Header("相手の勝利画面")]
-    public GameObject m_win_2;
-    [SerializeField,Header("タイトルへ戻る")]
+    public GameObject m_win_1;
+    [SerializeField, Header("タイトルへ戻る")]
     public GameObject m_title;
     /*
         private float m_timer;
         private string lasertag = "Laser";
     */
     private int m_Maxhealth_pc;
-    private float title;
-    private int i = 0;
     //    private bool hit = false;
 
 
@@ -38,32 +34,15 @@ public class Health_PC : MonoBehaviour, IAttackable
 
 
     public void Damage(int damage)
-    { 
+    {
         m_health_pc -= damage;
         if (m_health_pc <= 0)
         {
             Destroy(this.gameObject);
-            m_win_2.SetActive(true);
+            m_win_1.SetActive(true);
             m_title.SetActive(true);
         }
 
     }
 
-/*    public void Title()
-    {
-        if (Input.GetButtonDown("タイトル"))
-        {
-            if (i == 0)
-            {
-                m_title.SetActive(true);
-                i += 1;
-            }
-            else
-            {
-                m_title.SetActive(false);
-                i = 0;
-            }
-        }
-    }
-*/
 }
