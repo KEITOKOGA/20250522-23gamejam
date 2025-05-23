@@ -565,10 +565,18 @@ PrefabInstance:
       propertyPath: gauge
       value: 
       objectReference: {fileID: 1054444245316722653}
+    - target: {fileID: 112016084072789931, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
+      propertyPath: m_win_2
+      value: 
+      objectReference: {fileID: 5905910678777394096}
     - target: {fileID: 873698586526004628, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: gauge
       value: 
       objectReference: {fileID: 1324031111609750959}
+    - target: {fileID: 873698586526004628, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
+      propertyPath: m_win_2
+      value: 
+      objectReference: {fileID: 6770838071001836360}
     - target: {fileID: 1210251095406478363, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: m_LocalPosition.y
       value: -7.7
@@ -774,5 +782,15 @@ MonoBehaviour:
 --- !u!224 &4651798862509183062 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2758503769100734497, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
+  m_PrefabInstance: {fileID: 7405799031839801463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5905910678777394096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3976868153518470087, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
+  m_PrefabInstance: {fileID: 7405799031839801463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6770838071001836360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4265040382632340287, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
   m_PrefabInstance: {fileID: 7405799031839801463}
   m_PrefabAsset: {fileID: 0}
