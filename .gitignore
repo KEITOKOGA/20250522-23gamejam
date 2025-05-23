@@ -79,3 +79,5 @@ Assets/Konishi/Circle.prefab.meta
 Assets/Konishi/Player.prefab.meta
 Assets/Konishi/test scene.unity.meta
 Assets/Kouga/TestScene.unity.meta
+/[Aa]ssets/Plugins*
+/[Aa]ssets/Resources*
