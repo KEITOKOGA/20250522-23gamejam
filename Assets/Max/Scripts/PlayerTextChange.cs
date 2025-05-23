@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
@@ -42,10 +43,26 @@ public class PlayerTextChange : MonoBehaviour
     private int readyCounterP2 = 0;
 
     private bool countdownRunning = false;
+    bool konamiflag = false;
+    int cmd1Seq = 0;
+    int[] keyCodes1;
+    int[] konamiCommand = new[] {
+        (int)KeyCode.UpArrow,
+        (int)KeyCode.UpArrow,
+        (int)KeyCode.DownArrow,
+        (int)KeyCode.DownArrow,
+        (int)KeyCode.LeftArrow,
+        (int)KeyCode.RightArrow,
+        (int)KeyCode.LeftArrow,
+        (int)KeyCode.RightArrow,
+        (int)KeyCode.B,
+        (int)KeyCode.A
+    };
 
     private void Start()
     {
         countdownText.gameObject.SetActive(false);
+        keyCodes1 = (int[])Enum.GetValues(typeof(KeyCode));
     }
     private void Update()
     {
@@ -105,6 +122,26 @@ public class PlayerTextChange : MonoBehaviour
             StartCoroutine(Countdown());
             Debug.Log("Countdown running");
         }
+        var com1 = keyCodes1.Length;
+        for (var i = 0; i < com1; i++)
+        {
+            if (Input.GetKeyUp((KeyCode)keyCodes1[i]))
+            {
+                if (konamiCommand[cmd1Seq] == keyCodes1[i])
+                {
+                    cmd1Seq++;
+                    if (cmd1Seq == konamiCommand.Length)
+                    {
+                        konamiflag = true;
+                        cmd1Seq = 0;
+                    }
+                }
+                else
+                {
+                    cmd1Seq = 0;
+                }
+            }
+        }
     }
 
 
@@ -151,12 +188,22 @@ public class PlayerTextChange : MonoBehaviour
         countdownText.gameObject.SetActive(false);
 
         countdownRunning = false;
-
-        StartGame();
+        if(konamiflag == false)
+        {
+            StartGame();
+        }
+        else
+        {
+            SpecialGame();
+        }
     }
 
     private void StartGame()
     {
         SceneManager.LoadScene("InGameScene");
+    }
+    private void SpecialGame()
+    {
+        SceneManager.LoadScene("SpecialScene");
     }
 }
