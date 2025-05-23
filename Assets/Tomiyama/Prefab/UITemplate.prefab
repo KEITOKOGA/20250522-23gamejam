@@ -786,9 +786,6 @@ MonoBehaviour:
   - color: {r: 0, g: 0.044991016, b: 1, a: 1}
     laserPrefab: {fileID: 6452038679192565001, guid: ed4a77524f4a58345a44a5d7c5b27321, type: 3}
     interval: 0.5
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    laserPrefab: {fileID: 9152715514697761492, guid: 6f9c61eb38971cc47b87775a2752c4c3, type: 3}
-    interval: 1
   - color: {r: 1, g: 1, b: 0, a: 1}
     laserPrefab: {fileID: 8196092541002539179, guid: 5adfaae0b6f7ed94aaa8ec2b533a89bf, type: 3}
     interval: 2
@@ -1046,8 +1043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -272}
-  m_SizeDelta: {x: 301.3143, y: 51.7853}
+  m_AnchoredPosition: {x: 200.00002, y: -295.99997}
+  m_SizeDelta: {x: 225.3379, y: 120.5941}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4887961394125628340
 CanvasRenderer:
