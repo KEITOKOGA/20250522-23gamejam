@@ -601,7 +601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS A or E
+  m_text: PRESS E
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
   m_sharedMaterial: {fileID: 3925195169819600955, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS A or O
+  m_text: PRESS O
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
   m_sharedMaterial: {fileID: 3925195169819600955, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
