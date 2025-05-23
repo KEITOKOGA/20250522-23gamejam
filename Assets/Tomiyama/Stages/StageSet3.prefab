@@ -224,11 +224,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
---- !u!1 &517542434678270550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5404377179398042162, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
-  m_PrefabInstance: {fileID: 5489494814876440676}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2614928905181562830 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7522292923190255530, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
@@ -251,14 +246,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87f0dcbf48034f45a78c2fdebdc2a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6706191479546685730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1242914253718860102, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
-  m_PrefabInstance: {fileID: 5489494814876440676}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7667016501749893189 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2758503769100734497, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
+  m_PrefabInstance: {fileID: 5489494814876440676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8583559427799397211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4265040382632340287, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
+  m_PrefabInstance: {fileID: 5489494814876440676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8871588724614835107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3976868153518470087, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
   m_PrefabInstance: {fileID: 5489494814876440676}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6410542893170941033
@@ -584,7 +584,7 @@ PrefabInstance:
     - target: {fileID: 112016084072789931, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: m_win_2
       value: 
-      objectReference: {fileID: 517542434678270550}
+      objectReference: {fileID: 8871588724614835107}
     - target: {fileID: 873698586526004628, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: gauge
       value: 
@@ -592,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 873698586526004628, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: m_win_2
       value: 
-      objectReference: {fileID: 6706191479546685730}
+      objectReference: {fileID: 8583559427799397211}
     - target: {fileID: 1361071727307450197, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: m_Name
       value: StageTemplate

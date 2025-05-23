@@ -786,9 +786,6 @@ MonoBehaviour:
   - color: {r: 0, g: 0.044991016, b: 1, a: 1}
     laserPrefab: {fileID: 6452038679192565001, guid: ed4a77524f4a58345a44a5d7c5b27321, type: 3}
     interval: 0.5
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    laserPrefab: {fileID: 9152715514697761492, guid: 6f9c61eb38971cc47b87775a2752c4c3, type: 3}
-    interval: 1
   - color: {r: 1, g: 1, b: 0, a: 1}
     laserPrefab: {fileID: 8196092541002539179, guid: 5adfaae0b6f7ed94aaa8ec2b533a89bf, type: 3}
     interval: 2
