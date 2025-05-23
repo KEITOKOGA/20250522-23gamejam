@@ -18,7 +18,7 @@ public class attack : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        var isPressed = (_type == PlayerType.A) ? Input.GetKeyDown(KeyCode.Space) : Input.GetKeyDown(KeyCode.RightShift);
+        var isPressed = (_type == PlayerType.A) ? Input.GetKeyDown(KeyCode.Space) : Input.GetKeyDown(KeyCode.RightControl);
         if (isPressed && _timer > interval) Shoot();
     }
 

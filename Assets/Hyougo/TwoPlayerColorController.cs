@@ -40,13 +40,13 @@ public class TwoPlayerColorController : MonoBehaviour
         }
 
         // --- プレイヤー2操作 ---
-        if (Input.GetKeyDown(KeyCode.Keypad7))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             player2Index = (player2Index - 1 + colorList.Count) % colorList.Count;
             ApplyColor(player2Images, colorList[player2Index].color);
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad9))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             player2Index = (player2Index + 1) % colorList.Count;
             ApplyColor(player2Images, colorList[player2Index].color);

@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player A
+  m_text: Player 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
   m_sharedMaterial: {fileID: 3925195169819600955, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
@@ -379,11 +379,11 @@ RectTransform:
   - {fileID: 5818766184456312476}
   - {fileID: 7036301514529244203}
   - {fileID: 5183450674441453473}
+  - {fileID: 8213996915461779093}
+  - {fileID: 7533121000597722945}
   - {fileID: 3215792543154845449}
   - {fileID: 2311271075118938040}
   - {fileID: 3295187712292058232}
-  - {fileID: 8213996915461779093}
-  - {fileID: 7533121000597722945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -521,7 +521,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Move - IJKL
 
-    Shoot - Enter
+    Shoot - R Ctrl
 
     Color - U/O'
   m_isRightToLeft: 0
@@ -1697,7 +1697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player B
+  m_text: Player 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
   m_sharedMaterial: {fileID: 3925195169819600955, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}

@@ -23,15 +23,8 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            var addV = 0;
-            if (Input.GetKey(KeyCode.Keypad5)) addV--;
-            else if (Input.GetKey(KeyCode.Keypad8)) addV++;
-            _v = addV;
-
-            var addH = 0;
-            if (Input.GetKey(KeyCode.Keypad4)) addH--;
-            else if (Input.GetKey(KeyCode.Keypad6)) addH++;
-            _h = addH;
+            _h = Input.GetAxisRaw("Horizontal2");
+            _v = Input.GetAxisRaw("Vertical2");
         }
     }
 
