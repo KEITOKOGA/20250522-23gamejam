@@ -67,7 +67,7 @@ public class PlayerTextChange : MonoBehaviour
             }
             else if(readyCounterP1 == 1)
             {
-                Player1.text = "PRESS A";
+                Player1.text = "PRESS E";
                 isReadyP1 = false;
                 readyCounterP1--;
                 Player1.colorGradientPreset = isReadyP1 ? Ready : NotReady;
@@ -93,7 +93,7 @@ public class PlayerTextChange : MonoBehaviour
             }
             else if (readyCounterP2 == 1)
             {
-                Player2.text = "PRESS A";
+                Player2.text = "PRESS O";
                 isReadyP2 = false;
                 readyCounterP2--;
                 Player2.colorGradientPreset = isReadyP2 ? Ready : NotReady;
