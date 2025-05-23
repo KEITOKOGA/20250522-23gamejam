@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTextChange : MonoBehaviour
 {
@@ -147,6 +148,6 @@ public class PlayerTextChange : MonoBehaviour
 
     private void StartGame()
     {
-        Debug.Log("All good");
+        SceneManager.LoadScene("InGameScene");
     }
 }
