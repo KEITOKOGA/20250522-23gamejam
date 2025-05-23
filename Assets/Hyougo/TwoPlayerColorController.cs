@@ -55,7 +55,6 @@ public class TwoPlayerColorController : MonoBehaviour
 
     void ApplyColor(List<Image> targets, Color color)
     {
-        Debug.Log(color);
         foreach (Image img in targets)
         {
             if (img != null)

@@ -49,11 +49,3 @@ public class LaserBeamBehaviour : MonoBehaviour
         }
     }
 }
-
-public enum LaserType
-{
-    Red,
-    Blue,
-    Green,
-    Yellow,
-}
