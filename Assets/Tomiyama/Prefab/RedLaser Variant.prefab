@@ -13,6 +13,14 @@ PrefabInstance:
       value: RedLaser Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2307583797357121472, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307583797357121472, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    - target: {fileID: 2307583797357121472, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
@@ -24,9 +32,25 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2307583797357121472, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322446239784817085, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322446239784817085, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322446239784817085, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _width
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _damage
@@ -36,6 +60,14 @@ PrefabInstance:
       propertyPath: _duration
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _laserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f24006e6d626e7f4888089a3c53cf4e6, type: 3}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _chargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f0538690ad645b54780e257859814bf0, type: 3}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _beforeDurationTime
       value: 2

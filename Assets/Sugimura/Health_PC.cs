@@ -21,6 +21,7 @@ public class Health_PC : MonoBehaviour, IAttackable
     public void Damage(int damage)
     {
         Debug.Log($"player take {damage}");
+        SoundManager.Instance.PlaySE(SE.BeamHit);
         gauge.BeInjured(damage);
         m_health_pc -= damage;
         if (m_health_pc <= 0)

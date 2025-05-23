@@ -30,6 +30,10 @@ public class SoundManager : MonoBehaviour
         var clip = _seList.Find(x => x.se == se).clip;
         _seAus.PlayOneShot(clip);
     }
+    public void PlaySE(AudioClip clip)
+    {
+        _seAus.PlayOneShot(clip);
+    }
     
     public void PlayBGM(BGM bgm)
     {

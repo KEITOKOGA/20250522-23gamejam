@@ -37,6 +37,14 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _laserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ba724fb13ade114da1abdf6586a1d5b, type: 3}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
+      propertyPath: _chargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 72ba662dd0045904b962134ad248726c, type: 3}
+    - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _beforeDurationTime
       value: 3
       objectReference: {fileID: 0}
