@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _damage
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _duration
@@ -43,10 +43,10 @@ PrefabInstance:
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _chargeSound
       value: 
-      objectReference: {fileID: 8300000, guid: 72ba662dd0045904b962134ad248726c, type: 3}
+      objectReference: {fileID: 8300000, guid: 49efb0ad511f57041a390df00aac5ba8, type: 3}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _beforeDurationTime
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6078010198327132460, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: m_Color.b
