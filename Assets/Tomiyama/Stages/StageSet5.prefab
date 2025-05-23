@@ -1625,9 +1625,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2758503769100734497, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
   m_PrefabInstance: {fileID: 3158403652309869732}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &997838375332382779 stripped
+--- !u!1 &1217256963105542043 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2742111443993848991, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4265040382632340287, guid: 8f48a428aae8313438bab0a0a882aea6, type: 3}
   m_PrefabInstance: {fileID: 3158403652309869732}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2081872355884390243 stripped
@@ -1680,7 +1680,7 @@ PrefabInstance:
     - target: {fileID: 873698586526004628, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: m_win_2
       value: 
-      objectReference: {fileID: 997838375332382779}
+      objectReference: {fileID: 1217256963105542043}
     - target: {fileID: 1361071727307450197, guid: b34ee975ca6c68f4ba1968871195222e, type: 3}
       propertyPath: m_Name
       value: StageTemplate
