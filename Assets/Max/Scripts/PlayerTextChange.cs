@@ -59,7 +59,11 @@ public class PlayerTextChange : MonoBehaviour
                 isReadyP1 = true;
                 readyCounterP1++;
                 Player1.colorGradientPreset = isReadyP1 ? Ready : NotReady;
-                menuAudioSource.PlayOneShot(readySound);
+
+                if (!countdownRunning)
+                {
+                    menuAudioSource.PlayOneShot(readySound);
+                }
             }
             else if(readyCounterP1 == 1)
             {
@@ -81,7 +85,11 @@ public class PlayerTextChange : MonoBehaviour
                 isReadyP2 = true;
                 readyCounterP2++;
                 Player2.colorGradientPreset = isReadyP2 ? Ready : NotReady;
-                menuAudioSource.PlayOneShot(readySound);
+
+                if (!countdownRunning)
+                {
+                    menuAudioSource.PlayOneShot(readySound);
+                }
             }
             else if (readyCounterP2 == 1)
             {
@@ -95,6 +103,7 @@ public class PlayerTextChange : MonoBehaviour
         if (isReadyP1 == true && isReadyP2 == true && countdownRunning == false)
         {
             StartCoroutine(Countdown());
+            Debug.Log("Countdown running");
         }
     }
 

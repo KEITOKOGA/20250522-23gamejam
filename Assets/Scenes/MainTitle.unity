@@ -1827,8 +1827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.36528477, y: 4.034668}
-  m_SizeDelta: {x: 1020.42, y: 138.43}
+  m_AnchoredPosition: {x: 0.03, y: 4.03}
+  m_SizeDelta: {x: 1118.1501, y: 148.7173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119057458
 MonoBehaviour:
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LASER GAME
+  m_text: LASER NEXUS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
   m_sharedMaterial: {fileID: 3925195169819600955, guid: 158479282f25ff044b4a6d53140ddebe, type: 2}
