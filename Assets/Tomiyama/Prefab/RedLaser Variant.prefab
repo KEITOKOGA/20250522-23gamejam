@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _width
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _damage
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f0538690ad645b54780e257859814bf0, type: 3}
     - target: {fileID: 3585615542383976452, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: _beforeDurationTime
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6078010198327132460, guid: 0c67b787e46440044b4f4143e715fbe5, type: 3}
       propertyPath: m_Color.b
