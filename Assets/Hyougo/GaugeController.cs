@@ -6,10 +6,9 @@ public class GaugeController : MonoBehaviour
 {
     [SerializeField] private GameObject _gauge;
     [SerializeField] private GameObject _graceGauge;
-    [SerializeField] private float _decreaseTime;
+    [SerializeField] private float _waitingTime;
     public int _HP;
     private float _HP1;
-    private float _waitingTime = 0.5f;
 
     public void Init()
     {

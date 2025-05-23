@@ -1,18 +1,11 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CooldownController : MonoBehaviour
 {
-    public float cooldownDuration = 2f;
-
-    private float actionEndTimeP1 = 0f;
-    private float actionEndTimeP2 = 0f;
-
-    private bool isCooldownP1 = false;
-    private bool isCooldownP2 = false;
-
-    public Image cooldownImageP1;
-    public Image cooldownImageP2;
+    [SerializeField] private Image cooldownImageP1;
+    [SerializeField] private Image cooldownImageP2;
 
     void Start()
     {
@@ -20,65 +13,18 @@ public class CooldownController : MonoBehaviour
         if (cooldownImageP2 != null) cooldownImageP2.fillAmount = 1f;
     }
 
-    void Update()
+    public void UIStartCooldown(PlayerType playerType, float duration)
     {
-        HandlePlayerInput();
-        UpdateCooldownUI();
-    }
-
-    void HandlePlayerInput()
-    {
-        // Player 1: Space
-        if (Input.GetKeyDown(KeyCode.Space) && !isCooldownP1)
+        Debug.Log("UI StartCooldown");
+        if (playerType == PlayerType.A)
         {
-            isCooldownP1 = true;
-            actionEndTimeP1 = Time.time + cooldownDuration;
+            cooldownImageP1.fillAmount = 0;
+            cooldownImageP1.DOFillAmount(1, duration).SetEase(Ease.Linear);
         }
-
-        // Player 2: RightShift
-        if (Input.GetKeyDown(KeyCode.RightShift) && !isCooldownP2)
+        else
         {
-            isCooldownP2 = true;
-            actionEndTimeP2 = Time.time + cooldownDuration;
-        }
-
-        if (isCooldownP1 && Time.time >= actionEndTimeP1)
-        {
-            isCooldownP1 = false;
-        }
-
-        if (isCooldownP2 && Time.time >= actionEndTimeP2)
-        {
-            isCooldownP2 = false;
-        }
-    }
-
-    void UpdateCooldownUI()
-    {
-        if (cooldownImageP1 != null)
-        {
-            if (isCooldownP1)
-            {
-                float remaining = actionEndTimeP1 - Time.time;
-                cooldownImageP1.fillAmount = Mathf.Clamp01(remaining / cooldownDuration);
-            }
-            else
-            {
-                cooldownImageP1.fillAmount = 1f; // çUåÇâ¬î\
-            }
-        }
-
-        if (cooldownImageP2 != null)
-        {
-            if (isCooldownP2)
-            {
-                float remaining = actionEndTimeP2 - Time.time;
-                cooldownImageP2.fillAmount = Mathf.Clamp01(remaining / cooldownDuration);
-            }
-            else
-            {
-                cooldownImageP2.fillAmount = 1f; // çUåÇâ¬î\
-            }
+            cooldownImageP2.fillAmount = 0;
+            cooldownImageP2.DOFillAmount(1, duration).SetEase(Ease.Linear);
         }
     }
 }

@@ -3,8 +3,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private float Speed;    
-    [SerializeField] private float rotateSpeed;
+    [SerializeField] private float Speed;
     [SerializeField] private PlayerType type;
 
     private float _h;
@@ -14,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     void Update()
     {
         if (type == PlayerType.A)
@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.Keypad5)) addV--;
             else if (Input.GetKey(KeyCode.Keypad8)) addV++;
             _v = addV;
-            
+
             var addH = 0;
             if (Input.GetKey(KeyCode.Keypad4)) addH--;
             else if (Input.GetKey(KeyCode.Keypad6)) addH++;
@@ -43,15 +43,7 @@ public class PlayerMove : MonoBehaviour
 
         if (_h != 0 || _v != 0)
         {
-            transform.up = input.normalized * rotateSpeed;
+            transform.up = input.normalized;
         }
     }
-
 }
-public enum PlayerType
-{
-    A,
-    B,
-}
-
-
