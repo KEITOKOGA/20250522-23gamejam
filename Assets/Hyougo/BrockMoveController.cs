@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BrockMoveController : MonoBehaviour
 {
-    public float amplitude = 1f;      // ã‰º‚Ì•
-    public float speed = 1f;          // ã‰º‚Ì‘¬‚³
+    public float amplitude = 1f;      // ï¿½ã‰ºï¿½Ì•ï¿½
+    public float speed = 1f;          // ï¿½ã‰ºï¿½Ì‘ï¿½ï¿½ï¿½
     private Vector2 startPos;
 
     void Start()
@@ -11,7 +11,7 @@ public class BrockMoveController : MonoBehaviour
         startPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float newY = Mathf.Sin(Time.time * speed) * amplitude;
         transform.position = startPos + new Vector2(0, newY);
