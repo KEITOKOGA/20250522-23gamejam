@@ -26,6 +26,7 @@ public class Health_PC : MonoBehaviour, IAttackable
         m_health_pc -= damage;
         if (m_health_pc <= 0)
         {
+            SoundManager.Instance.PlaySE(SE.ResultWin);
             Destroy(gameObject);
             m_win_2.SetActive(true);
         }

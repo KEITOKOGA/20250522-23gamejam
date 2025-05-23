@@ -475,6 +475,8 @@ MonoBehaviour:
   _seList:
   - se: 2
     clip: {fileID: 8300000, guid: fe8a12c673951294f83cf76e0e8b351b, type: 3}
+  - se: 5
+    clip: {fileID: 8300000, guid: 01c50b7e40d15924ba3ccd2b6d38043c, type: 3}
   _bgmList: []
   _seAus: {fileID: 3902623845698946781}
   _bgmAus: {fileID: 7711213867422478821}
