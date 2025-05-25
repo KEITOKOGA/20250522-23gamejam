@@ -488,8 +488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 403, y: 115}
-  m_SizeDelta: {x: 257.0227, y: 83.554}
+  m_AnchoredPosition: {x: 395.5479, y: 115}
+  m_SizeDelta: {x: 271.9268, y: 83.554}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7896612255746596541
 CanvasRenderer:
@@ -521,7 +521,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Move - IJKL
 
-    Shoot - R Ctrl
+    Shoot - Enter
 
     Color - U/O'
   m_isRightToLeft: 0
